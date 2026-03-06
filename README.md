@@ -1,12 +1,13 @@
 # Scalable REST API with JWT Authentication
 
-This project implements a secure and scalable backend API with authentication, role-based access control, and CRUD operations. A simple React frontend is included to demonstrate and interact with the APIs.
+This project implements a secure and scalable backend API with authentication, role-based access control, and CRUD operations.  
+A simple React frontend is included to demonstrate and interact with the APIs.
 
 ---
 
 # Tech Stack
 
-### Backend
+## Backend
 - Node.js
 - Express.js
 - MongoDB
@@ -15,7 +16,7 @@ This project implements a secure and scalable backend API with authentication, r
 - bcryptjs (Password Hashing)
 - dotenv
 
-### Frontend
+## Frontend
 - React.js
 - Axios
 
@@ -32,12 +33,15 @@ This project implements a secure and scalable backend API with authentication, r
 
 ## Role-Based Access
 Supports two roles:
-- User
-- Admin
+
+- User  
+- Admin  
 
 Role information is stored in the database.
 
-## CRUD Operations (Tasks)
+---
+
+# CRUD Operations (Tasks)
 
 The API allows users to:
 
@@ -54,7 +58,11 @@ All task routes are protected using JWT authentication.
 
 ## Register User
 
-POST `/api/auth/register`
+**POST**
+
+```
+/api/auth/register
+```
 
 Request Body
 
@@ -70,7 +78,11 @@ Request Body
 
 ## Login User
 
-POST `/api/auth/login`
+**POST**
+
+```
+/api/auth/login
+```
 
 Request Body
 
@@ -99,9 +111,13 @@ Authorization: Bearer JWT_TOKEN
 
 # Task APIs
 
-### Create Task
+## Create Task
 
-POST `/api/tasks`
+**POST**
+
+```
+/api/tasks
+```
 
 ```json
 {
@@ -112,17 +128,25 @@ POST `/api/tasks`
 
 ---
 
-### Get Tasks
+## Get Tasks
 
-GET `/api/tasks`
+**GET**
+
+```
+/api/tasks
+```
 
 Returns all tasks created by the authenticated user.
 
 ---
 
-### Update Task
+## Update Task
 
-PUT `/api/tasks/:id`
+**PUT**
+
+```
+/api/tasks/:id
+```
 
 ```json
 {
@@ -132,9 +156,13 @@ PUT `/api/tasks/:id`
 
 ---
 
-### Delete Task
+## Delete Task
 
-DELETE `/api/tasks/:id`
+**DELETE**
+
+```
+/api/tasks/:id
+```
 
 Deletes a task.
 
@@ -224,7 +252,7 @@ API request collection is available in:
 backend/docs/Backend API Assignment.json
 ```
 
-You can import it into **Postman or Hoppscotch**.
+You can import it into **Postman** or **Hoppscotch**.
 
 ---
 
@@ -250,4 +278,4 @@ The system can be scaled using:
 
 # Author
 
-Kummari Sai Harshitha
+**Kummari Sai Harshitha**
