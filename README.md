@@ -276,6 +276,10 @@ The system can be scaled using:
 
 ---
 
+## Application Screenshot
+
+![App Screenshot](frontend/screenshot.jpeg)
+
 # Author
 
 **Kummari Sai Harshitha**
