@@ -1,0 +1,68 @@
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.app-container{
+  width:500px;
+}
+
+.main-title{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.container{
+  padding:30px;
+  background:#1e293b;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+h2{
+  margin-top:10px;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:none;
+  border-radius:6px;
+}
+
+button{
+  padding:10px 15px;
+  margin:6px 6px 6px 0;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.login-btn{
+  background:#3b82f6;
+  color:white;
+}
+
+.create-btn{
+  background:#22c55e;
+  color:white;
+}
+
+.get-btn{
+  background:#f59e0b;
+  color:white;
+}
+
+ul{
+  margin-top:15px;
+}
