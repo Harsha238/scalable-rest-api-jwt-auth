@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body{
+  margin:0;
+  font-family: Arial;
+  background:#0f172a;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container{
+  display:flex;
+  justify-content:center;
+  padding:40px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  background:#1e293b;
+  padding:25px;
+  border-radius:10px;
+  width:450px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.main-title{
+  text-align:center;
+  color:white;
+  margin-bottom:20px;
 }
 
-.card {
-  padding: 2em;
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
 }
 
-.read-the-docs {
-  color: #888;
+button{
+  padding:8px 12px;
+  margin:5px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.login-btn{
+  background:#3b82f6;
+  color:white;
+}
+
+.create-btn{
+  background:#22c55e;
+  color:white;
+}
+
+.get-btn{
+  background:#f59e0b;
+  color:white;
+}
+
+.delete-btn{
+  background:red;
+  color:white;
+}
+
+/* TASK LIST SCROLL FIX */
+
+.task-container{
+  margin-top:15px;
+}
+
+.task-list{
+  max-height:200px;
+  overflow-y:auto;
+  padding:0;
+}
+
+.task-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px;
+  border-bottom:1px solid #444;
+  list-style:none;
 }

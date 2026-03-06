@@ -20,7 +20,8 @@ function App() {
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
 
-      alert("Login successful");   // this will show a popup
+      alert("Login successful");
+
     } catch (err) {
       alert("Login failed");
     }
@@ -28,32 +29,85 @@ function App() {
 
   const createTask = async () => {
 
-    const res = await axios.post(
-      "http://localhost:5000/api/tasks",
-      { title, description },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
+    if (!token) {
+      alert("Please login first!");
+      return;
+    }
 
-    setTasks([...tasks, res.data]);
+    try {
+
+      const res = await axios.post(
+        "http://localhost:5000/api/tasks",
+        { title, description },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      setTasks([...tasks, res.data]);
+
+      // clear input fields
+      setTitle("");
+      setDescription("");
+
+    } catch (err) {
+      alert("Error creating task");
+    }
 
   };
 
   const getTasks = async () => {
 
-    const res = await axios.get(
-      "http://localhost:5000/api/tasks",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
+    if (!token) {
+      alert("Please login first!");
+      return;
+    }
 
-    setTasks(res.data);
+    try {
+
+      const res = await axios.get(
+        "http://localhost:5000/api/tasks",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      setTasks(res.data);
+
+    } catch (err) {
+      alert("Error fetching tasks");
+    }
+
+  };
+
+  const deleteTask = async (id) => {
+
+    if (!token) {
+      alert("Please login first!");
+      return;
+    }
+
+    try {
+
+      await axios.delete(
+        `http://localhost:5000/api/tasks/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      // remove deleted task from UI
+      setTasks(tasks.filter((task) => task._id !== id));
+
+    } catch (err) {
+      alert("Error deleting task");
+    }
 
   };
 
@@ -71,12 +125,14 @@ function App() {
 
         <input
           placeholder="email"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           placeholder="password"
           type="password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
@@ -90,11 +146,13 @@ function App() {
 
         <input
           placeholder="title"
+          value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
         <input
           placeholder="description"
+          value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
 
@@ -106,17 +164,32 @@ function App() {
           Get Tasks
         </button>
 
-        <ul>
-          {tasks.map((task) => (
-            <li key={task._id}>{task.title}</li>
-          ))}
-        </ul>
+        <div className="task-container">
+
+  <ul className="task-list">
+    {tasks.map((task) => (
+      <li key={task._id} className="task-item">
+
+        <span>{task.title}</span>
+
+        <button
+          className="delete-btn"
+          onClick={() => deleteTask(task._id)}
+        >
+          Delete
+        </button>
+
+      </li>
+    ))}
+  </ul>
+
+</div>
 
       </div>
 
     </div>
 
   );
-};
+}
 
 export default App;
