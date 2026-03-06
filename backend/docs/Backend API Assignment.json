@@ -4,215 +4,70 @@
   "folders": [],
   "requests": [
     {
-      "v": "17",
-      "name": "Untitled",
+      "name": "Create Task",
       "method": "POST",
       "endpoint": "http://localhost:5000/api/tasks",
-      "params": [],
       "headers": [
         {
           "key": "Authorization",
-          "value": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "active": true,
-          "description": ""
-        },
-        {
-          "key": "Authorization ",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YWE4NjQzMGIwYjg1NGVmOTQ2NTE3YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcyNzg0NDc3LCJleHAiOjE3NzI3ODgwNzd9._Cv2OlM-m2owZrlHkL5oHf1Y41cw29NQ9D3hSLg275s",
-          "active": true,
-          "description": ""
+          "value": "Bearer YOUR_JWT_TOKEN",
+          "active": true
         }
       ],
-      "preRequestScript": "",
-      "testScript": "",
-      "auth": {
-        "authType": "inherit",
-        "authActive": true
-      },
       "body": {
         "contentType": "application/json",
         "body": "{\n  \"title\": \"Test Task\",\n  \"description\": \"Testing API\"\n}"
-      },
-      "requestVariables": [],
-      "responses": {},
-      "description": null
+      }
     },
     {
-      "v": "17",
-      "name": "Post 2",
+      "name": "Login User",
       "method": "POST",
       "endpoint": "http://localhost:5000/api/auth/login",
-      "params": [],
-      "headers": [
-        {
-          "key": "Authorization",
-          "value": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "active": true,
-          "description": ""
-        },
-        {
-          "key": "Authorization ",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YWE4NjQzMGIwYjg1NGVmOTQ2NTE3YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcyNzg0NDc3LCJleHAiOjE3NzI3ODgwNzd9._Cv2OlM-m2owZrlHkL5oHf1Y41cw29NQ9D3hSLg275s",
-          "active": true,
-          "description": ""
-        }
-      ],
-      "preRequestScript": "",
-      "testScript": "",
-      "auth": {
-        "authType": "inherit",
-        "authActive": true
-      },
+      "headers": [],
       "body": {
         "contentType": "application/json",
         "body": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"123456\"\n}"
-      },
-      "requestVariables": [],
-      "responses": {},
-      "description": null
+      }
     },
     {
-      "v": "17",
-      "name": "Post 3",
-      "method": "POST",
-      "endpoint": "http://localhost:5000/api/tasks",
-      "params": [],
-      "headers": [
-        {
-          "key": "Authorization",
-          "value": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "active": true,
-          "description": ""
-        },
-        {
-          "key": "Authorization ",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YWE4NjQzMGIwYjg1NGVmOTQ2NTE3YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcyNzg0NDc3LCJleHAiOjE3NzI3ODgwNzd9._Cv2OlM-m2owZrlHkL5oHf1Y41cw29NQ9D3hSLg275s",
-          "active": true,
-          "description": ""
-        }
-      ],
-      "preRequestScript": "",
-      "testScript": "",
-      "auth": {
-        "authType": "inherit",
-        "authActive": true
-      },
-      "body": {
-        "contentType": "application/json",
-        "body": "{\n  \"title\": \"Test Task\",\n  \"description\": \"Testing API\"\n}"
-      },
-      "requestVariables": [],
-      "responses": {},
-      "description": null
-    },
-    {
-      "v": "17",
-      "name": "get task",
+      "name": "Get Tasks",
       "method": "GET",
       "endpoint": "http://localhost:5000/api/tasks",
-      "params": [],
       "headers": [
         {
           "key": "Authorization",
-          "value": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "active": true,
-          "description": ""
-        },
-        {
-          "key": "Authorization ",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YWE4NjQzMGIwYjg1NGVmOTQ2NTE3YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcyNzg0NDc3LCJleHAiOjE3NzI3ODgwNzd9._Cv2OlM-m2owZrlHkL5oHf1Y41cw29NQ9D3hSLg275s",
-          "active": true,
-          "description": ""
+          "value": "Bearer YOUR_JWT_TOKEN",
+          "active": true
         }
-      ],
-      "preRequestScript": "",
-      "testScript": "",
-      "auth": {
-        "authType": "inherit",
-        "authActive": true
-      },
-      "body": {
-        "contentType": "application/json",
-        "body": "{\n  \"title\": \"Test Task\",\n  \"description\": \"Testing API\"\n}"
-      },
-      "requestVariables": [],
-      "responses": {},
-      "description": null
+      ]
     },
     {
-      "v": "17",
-      "name": "put id",
+      "name": "Update Task",
       "method": "PUT",
       "endpoint": "http://localhost:5000/api/tasks/:id",
-      "params": [],
       "headers": [
         {
           "key": "Authorization",
-          "value": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "active": true,
-          "description": ""
-        },
-        {
-          "key": "Authorization ",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YWE4NjQzMGIwYjg1NGVmOTQ2NTE3YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcyNzg0NDc3LCJleHAiOjE3NzI3ODgwNzd9._Cv2OlM-m2owZrlHkL5oHf1Y41cw29NQ9D3hSLg275s",
-          "active": true,
-          "description": ""
+          "value": "Bearer YOUR_JWT_TOKEN",
+          "active": true
         }
       ],
-      "preRequestScript": "",
-      "testScript": "",
-      "auth": {
-        "authType": "inherit",
-        "authActive": true
-      },
       "body": {
         "contentType": "application/json",
         "body": "{\n  \"title\": \"Updated Task\"\n}"
-      },
-      "requestVariables": [],
-      "responses": {},
-      "description": null
+      }
     },
     {
-      "v": "17",
-      "name": "delete",
+      "name": "Delete Task",
       "method": "DELETE",
       "endpoint": "http://localhost:5000/api/tasks/:id",
-      "params": [],
       "headers": [
         {
           "key": "Authorization",
-          "value": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-          "active": true,
-          "description": ""
-        },
-        {
-          "key": "Authorization ",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YWE4NjQzMGIwYjg1NGVmOTQ2NTE3YyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcyNzg0NDc3LCJleHAiOjE3NzI3ODgwNzd9._Cv2OlM-m2owZrlHkL5oHf1Y41cw29NQ9D3hSLg275s",
-          "active": true,
-          "description": ""
+          "value": "Bearer YOUR_JWT_TOKEN",
+          "active": true
         }
-      ],
-      "preRequestScript": "",
-      "testScript": "",
-      "auth": {
-        "authType": "inherit",
-        "authActive": true
-      },
-      "body": {
-        "contentType": "application/json",
-        "body": "{\n  \"title\": \"Updated Task\"\n}"
-      },
-      "requestVariables": [],
-      "responses": {},
-      "description": null
+      ]
     }
-  ],
-  "auth": {
-    "authActive": true,
-    "authType": "none"
-  },
-  "headers": [],
-  "variables": [],
-  "description": ""
+  ]
 }
