@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 
 // REGISTER
 exports.register = async (req, res) => {
-
   try {
 
     const { username, email, password } = req.body;
@@ -23,11 +22,15 @@ exports.register = async (req, res) => {
 
   } catch (error) {
 
+    if (error.code === 11000) {
+      return res.status(400).json({ message: "Email already registered" });
+    }
+
     res.status(500).json({ error: error.message });
 
   }
-
 };
+
 
 // LOGIN
 exports.login = async (req, res) => {
@@ -50,7 +53,7 @@ exports.login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, role: user.role },
-      "secretkey",
+      process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
 
